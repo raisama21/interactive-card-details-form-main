@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/style.css" />
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <main>
+      <div class="main-container">
+        <div class="section-one">
+          <div class="container">
+            <div class="cc-front">
+              <img src="/images/bg-card-front.png" alt="" />
+
+              <div class="cc-front__content">
+                <img src="/images/card-logo.svg" alt="" />
+                <div class="card-number">0000 0000 0000 0000</div>
+                <div class="flex">
+                  <p class="card-name">JANE APPLESEED</p>
+                  <p class="cvc">
+                    <span class="display-month">00</span>
+                    /
+                    <span class="display-year">00</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="cc-back">
+              <img src="/images/bg-card-back.png" alt="" />
+              <div class="cc-back__content">
+                <p class="display-cvc">000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-two">
+          <form action="/" method="get" class="form">
+            <div class="form-container">
+              <div class="field">
+                <label for="username" class="label">card holder name</label>
+                <input
+                  class="input"
+                  type="text"
+                  id="username"
+                  name="username"
+                  maxlength="18"
+                  placeholder="e.g. Jane AppleSeed"
+                />
+                <p class="error-message"></p>
+              </div>
+              <div class="field">
+                <label for="cardnumber" class="label">card number</label>
+                <input
+                  name="cardnumber"
+                  type="text"
+                  id="cardnumber"
+                  name="cardnumber"
+                  class="input"
+                  maxlength="19"
+                  placeholder="e.g. 1234 5678 9123 0000"
+                />
+                <p class="error-message"></p>
+              </div>
+              <div class="expirydate-field">
+                <div class="container">
+                  <label for="expirydate" class="label"
+                    >exp. date (mm/yy)</label
+                  >
+                  <div class="exp-input">
+                    <input
+                      type="text"
+                      name="expirydate"
+                      maxlength="2"
+                      placeholder="MM"
+                      class="input"
+                      id="month"
+                    />
+                    <input
+                      type="text"
+                      name="expirydate"
+                      maxlength="2"
+                      placeholder="YY"
+                      class="input"
+                      id="year"
+                    />
+                  </div>
+                  <p class="error-message"></p>
+                </div>
+                <div class="cvc-field">
+                  <label for="cvc" class="label">cvc</label>
+                  <input
+                    class="input"
+                    type="text"
+                    id="cvc"
+                    name="cvc"
+                    maxlength="3"
+                    placeholder="e.g. 123"
+                  />
+                  <p class="error-message"></p>
+                </div>
+              </div>
+            </div>
+            <div class="hidden-section">
+              <div class="comp-icon">
+                <img src="/images/icon-complete.svg" alt="" />
+              </div>
+              <h2>THANK YOU!</h2>
+              <p>We've added your card details</p>
+            </div>
+            <div class="confirm-btn">
+              <button id="confirm-btn" type="submit">Confirm</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="/app/script/script.js"></script>
+  </body>
+</html>

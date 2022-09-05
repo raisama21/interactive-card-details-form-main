@@ -1,0 +1,100 @@
+@use "./mixin" as u;
+/* custom properties */
+:root {
+  --linearGradient: linear-gradient(
+    to right,
+    hsl(249, 99%, 64%),
+    hsl(278, 94%, 30%)
+  );
+
+  --red: hsl(0, 100%, 66%);
+  --white: hsl(0, 0%, 100%);
+  --lightViolet: hsl(270, 3%, 87%);
+  --darkViolet: hsl(279, 6%, 55%);
+  --darkerViolet: hsl(278, 68%, 11%);
+
+  --fs-base: 1rem;
+  @include u.breakpoint-up(large) {
+    --fs-base: 1.125rem;
+  }
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+// visibility
+
+.hide-for-mobile {
+  @include u.breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include u.breakpoint-up(large) {
+    display: none;
+  }
+}
+
+.error-message {
+  color: var(--red);
+}
+
+// contains
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
